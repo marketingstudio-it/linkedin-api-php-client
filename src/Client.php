@@ -360,7 +360,7 @@ class Client
         }
 
         if ($contents = $response->getHeaders()) {
-             return $contents;
+            return $contents;
         }
 
         return [];
@@ -545,12 +545,13 @@ class Client
             'headers' => $headers,
         ]);
         if (!empty($params) && Method::GET === $method) {
-            $endpoint .= '?' . Query::build($params);
+            $endpoint .= '?' . Query::build($params, false);
         }
-
+        
         try {
             $response = $guzzle->request($method, $endpoint, $params);
         } catch (RequestException $requestException) {
+            echo($requestException->getResponse()->getBody()->getContents());
             throw Exception::fromRequestException($requestException);
         }
         return self::responseToArray($response);
