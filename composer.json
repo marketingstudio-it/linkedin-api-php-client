@@ -1,5 +1,5 @@
 {
-    "name": "marketingstudio-it/linkedin-api-php-client",
+    "name": "zoonman/linkedin-api-php-client",
     "description": "This package is an SDK for using LinkedIn V2 Marketing API. You can use it for managing Company Pages in this social network",
     "type": "library",
     "keywords": [
